@@ -1,0 +1,29 @@
+function convert(quantity, unit) {
+    let convertedValue;
+
+    switch (unit) {
+        case "км":
+            convertedValue = quantity * 1000;
+            console.log(`${quantity} км це ${convertedValue} м.`);
+            break;
+
+        case "год":
+            convertedValue = quantity * 60;
+            console.log(`${quantity} год це ${convertedValue} хв.`);
+            break;
+
+        case "кг":
+            convertedValue = quantity * 1000;
+            console.log(`${quantity} кг це ${convertedValue} гр.`);
+            break;
+
+        default:
+            console.log("Невідома одиниця виміру.");
+    }
+}
+
+// Приклад використання
+convert(10, "км");
+convert(15, "год");
+convert(35, "кг");
+convert(5, "м"); // Приклад невідомої одиниці виміру
