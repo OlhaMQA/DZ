@@ -1,0 +1,32 @@
+// Спосіб 1: цикли
+function drawTriangle(height, symbol) {
+    for (let i = 1; i <= height; i++) {
+        let row = '';
+        for (let j = 1; j <= i; j++) {
+            row += symbol;
+        }
+        console.log(row);
+    }
+}
+
+// Спосіб 2: рекурсивний
+function drawTriangleRecursive(height, symbol, currentRow = 1) {
+    if (currentRow > height) {
+        return;
+    }
+
+    let row = '';
+    for (let i = 1; i <= currentRow; i++) {
+        row += symbol;
+    }
+
+    console.log(row);
+    drawTriangleRecursive(height, symbol, currentRow + 1);
+}
+
+// Перевіряємо
+console.log('Спосіб 1:');
+drawTriangle(5, '+');
+
+console.log('Спосіб 2:');
+drawTriangleRecursive(15, '*');
